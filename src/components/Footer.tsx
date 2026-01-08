@@ -1,26 +1,27 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const quickLinks = [
-    { name: "Personal Loan", href: "#" },
-    { name: "Home Loan", href: "#" },
-    { name: "Business Loan", href: "#" },
-    { name: "Education Loan", href: "#" },
-    { name: "Vehicle Loan", href: "#" },
-    { name: "Gold Loan", href: "#" },
+    { name: "Personal Loan", href: "/loans" },
+    { name: "Home Loan", href: "/loans" },
+    { name: "Business Loan", href: "/loans" },
+    { name: "Education Loan", href: "/loans" },
+    { name: "Vehicle Loan", href: "/loans" },
+    { name: "Gold Loan", href: "/loans" },
   ];
 
   const resources = [
-    { name: "EMI Calculator", href: "#calculator" },
-    { name: "Eligibility Check", href: "#" },
-    { name: "Apply Online", href: "#apply" },
-    { name: "FAQs", href: "#" },
-    { name: "Blog", href: "#" },
+    { name: "EMI Calculator", href: "/emi-calculator" },
+    { name: "Eligibility Check", href: "/apply" },
+    { name: "Apply Online", href: "/apply" },
+    { name: "FAQs", href: "/about" },
+    { name: "Blog", href: "/about" },
   ];
 
   return (
-    <footer id="about" className="bg-primary text-primary-foreground">
+    <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -29,14 +30,14 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <a href="#" className="flex items-center gap-2 mb-6">
+            <Link to="/" className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 rounded-lg gradient-gold flex items-center justify-center">
                 <span className="font-display text-xl font-bold text-navy-deep">E</span>
               </div>
               <span className="font-display text-2xl font-bold">
                 Elite<span className="text-gold">Paisa</span>
               </span>
-            </a>
+            </Link>
             <p className="text-primary-foreground/70 mb-6 leading-relaxed">
               Your trusted partner for all financial needs. We provide quick, hassle-free loans with competitive rates.
             </p>
@@ -67,12 +68,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-primary-foreground/70 hover:text-gold transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -89,12 +90,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {resources.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-primary-foreground/70 hover:text-gold transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

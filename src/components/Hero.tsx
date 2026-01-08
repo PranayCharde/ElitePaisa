@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Clock, Percent } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -41,20 +42,24 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                size="lg" 
-                className="bg-gold hover:bg-gold-dark text-navy-deep font-semibold px-8 py-6 text-lg shadow-elevated hover:shadow-2xl transition-all duration-300 animate-pulse-glow"
-              >
-                Apply for Loan
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-lg"
-              >
-                Calculate EMI
-              </Button>
+              <Link to="/apply">
+                <Button 
+                  size="lg" 
+                  className="bg-gold hover:bg-gold-dark text-navy-deep font-semibold px-8 py-6 text-lg shadow-elevated hover:shadow-2xl transition-all duration-300 animate-pulse-glow"
+                >
+                  Apply for Loan
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to="/emi-calculator">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-lg"
+                >
+                  Calculate EMI
+                </Button>
+              </Link>
             </div>
 
             {/* Trust Badges */}
